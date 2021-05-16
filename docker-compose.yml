@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jupyterhub:
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/srv/config
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+    command: jupyterhub -f config/jupyterhub_config.py 
