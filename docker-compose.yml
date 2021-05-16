@@ -4,9 +4,9 @@ services:
   jupyterhub:
     build: .
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./config:/srv/config
+      # - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/home/jovyan/config
+      - ./share/data:/home/jovyan/share/data:ro
     ports:
       - "8000:8000"
-      - "8080:8080"
     command: jupyterhub -f config/jupyterhub_config.py 
