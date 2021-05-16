@@ -4,7 +4,7 @@ services:
   jupyterhub:
     build: .
     volumes:
-      # - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock
       - ./config:/home/jovyan/config
       - ./share/data:/home/jovyan/share/data:ro
     ports:

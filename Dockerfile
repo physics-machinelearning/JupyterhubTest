@@ -1,6 +1,6 @@
 FROM jupyter/scipy-notebook
 
-RUN pip install jupyterhub-nativeauthenticator
+RUN pip install jupyterhub-nativeauthenticator dockerspawner jupyter-client
 
 USER root
 
